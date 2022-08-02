@@ -20,8 +20,8 @@ class App extends Component {
 
   componentDidMount() {
     const dataSaved =
-      JSON.parse(localStorage.getItem('contacts')).length === 0 ||
-      !localStorage.getItem('contacts')
+      !localStorage.getItem('contacts') ||
+      JSON.parse(localStorage.getItem('contacts')).length === 0
         ? dataInitial
         : JSON.parse(localStorage.getItem('contacts'));
     this.setState({ contacts: dataSaved });
