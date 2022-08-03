@@ -19,11 +19,9 @@ class App extends Component {
   };
 
   componentDidMount() {
-    const dataSaved =
-      !localStorage.getItem('contacts') ||
-      JSON.parse(localStorage.getItem('contacts')).length === 0
-        ? dataInitial
-        : JSON.parse(localStorage.getItem('contacts'));
+    const dataSaved = !localStorage.getItem('contacts')
+      ? dataInitial
+      : JSON.parse(localStorage.getItem('contacts'));
     this.setState({ contacts: dataSaved });
   }
 
